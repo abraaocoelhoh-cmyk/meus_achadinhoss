@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Achadinhos 🛍️</title>
+    <!-- Importando a fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff5722;
+            --primary-gradient: linear-gradient(135deg, #ff7043 0%, #f4511e 100%);
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding-bottom: 40px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header ajustado com zoom na logo e rolagem fluida */
+        header {
+            background: #ffffff;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 12px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #ff5722;
+            box-shadow: 0 8px 20px rgba(255, 87, 34, 0.25);
+            background-color: #ff5722;
+        }
+
+        .logo-cachorrinho {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.15);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+        }
+
+        .subtitulo {
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 400;
+        }
+
+        /* Container Principal dos Produtos */
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 0 15px;
+            display: grid;
+            gap: 20px;
+        }
+
+        /* Cards Estilo Aplicativo Moderno */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:active {
+            transform: scale(0.98);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Mantém a imagem inteira na proporção exata sem cortar */
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.03);
+        }
+
+        .badge-desconto {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #ff3b30;
+            color: white;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(255, 59, 48, 0.3);
+            z-index: 10;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            line-height: 1.5;
+        }
+
+        /* Botão da Shopee Estilizado */
+        .btn-shopee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--primary-gradient);
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 6px 15px rgba(255, 87, 34, 0.3);
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .btn-shopee:hover {
+            opacity: 0.95;
+            transform: translateY(-2px);
+        }
+
+        /* Rodapé Elegante */
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Topo da Página com a sua logo -->
+    <header>
+        <div class="logo-container">
+            <img src="https://i.ibb.co/Y436nDjM/1000527459.jpg" alt="Logo Achadinhos" class="logo-cachorrinho">
+        </div>
+        <h1>Meus Achadinhos 🛍️</h1>
+        <p class="subtitulo">Os melhores produtos da Shopee selecionados para você!</p>
+    </header>
+
+    <!-- Lista de Produtos Oficiais -->
+    <div class="container">
+
+        <!-- Produto 1: Kit Mobilador Gamer -->
+        <div class="card">
+            <div class="card-img-wrapper">
+                <span class="badge-desconto">Kit Gamer 🔥</span>
+                <img src="https://i.ibb.co/zH4khp87/mobile.png" alt="Kit Mobilador Gamer Completo 6 Peças">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Kit Mobilador Gamer Completo 6 Peças (Teclado, Mouse, Hub e Tripé)</div>
+                <div class="card-desc">Tudo o que você precisa para transformar seu celular em uma verdadeira máquina de jogos com alta precisão e conforto!</div>
+                <a href="https://s.shopee.com.br/qixjDcr0z" class="btn-shopee" target="_blank">
+                    Ver na Shopee 🛒
+                </a>
+            </div>
+        </div>
+
+        <!-- Produto 2: Mini Processador / Triturador de Alimentos -->
+        <div class="card">
+            <div class="card-img-wrapper">
+                <span class="badge-desconto">Utilidade ⭐</span>
+                <img src="https://i.ibb.co/PXScX98/no-mark-React-Native-snapshot-image-0.png" alt="Mini Processador Triturador de Alimentos Elétrico USB">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Mini Processador e Triturador de Alimentos Elétrico USB</div>
+                <div class="card-desc">Praticidade total para a sua cozinha! Pique alho, cebola e temperos rapidamente com apenas um toque.</div>
+                <a href="https://s.shopee.com.br/2gAbw3LeOc" class="btn-shopee" target="_blank">
+                    Ver na Shopee 🛒
+                </a>
+            </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="card">
+            <div class="card-img-wrapper">
+                <span class="badge-desconto">Imperdível 🚀</span>
+                <img src="https://i.ibb.co/hJzcBwkp/no-mark-React-Native-snapshot-image-1.png" alt="Novo Achadinho Shopee">
+            </div>
+            <div class="card-content">
+                <div class="card-title">Achadinho Incrível Selecionado para Você</div>
+                <div class="card-desc">Produto de alta qualidade selecionado especialmente para facilitar o seu dia a dia. Confira os detalhes na Shopee!</div>
+                <a href="https://s.shopee.com.br/1gI4mBblwZ" class="btn-shopee" target="_blank">
+                    Ver na Shopee 🛒
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Feito com carinho para os melhores achadinhos 🧡</p>
+    </footer>
+
+</body>
+</html>
